@@ -1,0 +1,35 @@
+#btn_mobile{
+    display: none;
+}
+@media (max-width: 600px) {
+    #menu_out nav ul{
+        display: none;
+    }
+    #btn_mobile{
+        display: flex;
+    }
+    #lista_menu_out.active ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 70px;
+        z-index: 1000;
+        background: rgba(0, 174, 255, .5);
+        padding: 10px 0;
+        box-shadow: 2px 0 40px var(--shadow-blue);
+    }
+    #lista_menu_out.active ul li{
+        border-bottom: 1px solid var(--color-white);
+        transform: translateY(0);
+        margin: 0;
+    }
+    #lista_menu_out.active ul li a{
+        display: block;
+        width: 100%;
+    }
+    #lista_menu_out.active ul li:hover{
+        background: var(--shadow-blue);
+    }
+}
