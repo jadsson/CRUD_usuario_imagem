@@ -40,6 +40,38 @@ class Crud{
         return $a;
     }
 
+    public function ReadAllImages(User $p) {
+        $sql = 'SELECT * FROM img WHERE id = ?';
+        $stmt = Conect::Conn()->prepare($sql);
+        $stmt->bindValue(1, $p->getId());
+        $stmt->execute();
+        $a = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $a;
+    }
+    
+    public function ReadOneImage($id_unique) {
+        $sql = 'SELECT * FROM img WHERE id = ?';
+        $stmt = Conect::Conn()->prepare($sql);
+        $stmt->bindValue(1, $id_unique);
+        $stmt->execute();
+        $a = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $a;
+    }
+
+    public function ReadCommentThisImage($id_unique) {
+        $sql = "SELECT * FROM tb_comment WHERE id = ?";
+        $stmt = Conect::Conn()->prepare($sql);
+        $stmt->bindValue(1, $id_unique);
+        $stmt->execute();
+        
+        if($stmt->rowCount() > 0) {
+            $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            return $a;
+        } else {
+            return [];
+        }
+    }
+
     public function Update(User $u) {
         $sql = 'UPDATE tb SET n=?, e=?, s=? WHERE id = ?';
         $stmt = Conect::Conn()->prepare($sql);

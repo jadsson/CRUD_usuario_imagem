@@ -23,6 +23,9 @@ include 'head_out.php';
         <input type="submit" name="enviar" value="Submit" class="button_a_confirm">
         <a href="index.php" class="button_a_back">Back</a>
     </form>
+    <div style="margin: 0 auto;">
+        <a href="cadastrar.php" style="text-align: center; color: rgb(0,162,255)">Cadastre-se</a>
+    </div>
 </body>
 
     <?php

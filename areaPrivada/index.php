@@ -2,12 +2,12 @@
 session_start();
 if(!isset($_SESSION['email'])) {
     header('location: ../index.php');
-    session_destroy();
-    exit();
 }
 
 require_once '../vendor/autoload.php';
+$u = new \App\Model\Crud;
 
+include 'head_in.php';
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +19,6 @@ require_once '../vendor/autoload.php';
     <title>Página Inicial</title>
 </head>
 <body>
-    <h1>PÁGINA INICIAL</h1>
+    
 
-    <a href="sair.php" class="button_a_back">Exit</a>
-</body>
-</html>
+<?php include 'footer_in.php'; ?>

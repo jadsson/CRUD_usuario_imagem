@@ -1,4 +1,3 @@
-
 <footer>
     <section id="footer">
         <div id="footer_content">

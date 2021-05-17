@@ -12,77 +12,22 @@
     <title>Página Inicial</title>
 </head>
 <body>
-    <section id="full_index">
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-        <div id="content_index">
-            <div class="circulo"></div>
-            <div>
-                <a href="login.php" class="button_a_confirm">Login</a>
-                <a href="cadastrar.php" class="button_a_confirm">Edit</a>
-            </div>
-        </div>
-    </section>
 
+    <?php 
+        function createCard($nome) {
+            echo '<section id="full_index">';
+                echo '<div id="content_index">';
+                    echo '<div class="circulo"></div>';
+                    echo '<div>';
+                        echo '<a class="button_a_confirm">'.$nome.'</a>';
+                    echo '</div>';
+                echo '</div>';
+            echo '</section>';
+        }
 
-
-
-
-
+        $name = 'Shani';
+        createCard($name);
+    ?>
 
     <?php
 

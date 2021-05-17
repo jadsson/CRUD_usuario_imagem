@@ -14,11 +14,12 @@
         position: absolute;
         left: 0;
         width: 100%;
+        height: 300px;
         top: 70px;
         z-index: 1000;
-        background: rgba(0, 174, 255, .5);
+        background: linear-gradient(to top, rgb(114, 0, 0), rgba(0, 174, 255, .5));
         padding: 10px 0;
-        box-shadow: 2px 0 40px var(--shadow-blue);
+        transition: .6s;
     }
     #lista_menu_out.active ul li{
         border-bottom: 1px solid var(--color-white);
