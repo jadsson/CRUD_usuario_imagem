@@ -10,6 +10,9 @@ class Crud{
         $stmt->bindValue(1, $u->getEmail());
         $stmt->execute();
 
+        global $qtdImagem;
+        $qtdImagem = $stmt->rowCount();
+
         if($stmt->rowCount() > 0) {
             return false;
         }
@@ -26,6 +29,30 @@ class Crud{
         }
     }
 
+    public function CreateImage(Image $u) {
+        $sql = 'SELECT * FROM img WHERE id = ?';
+        $stmt = Conect::Conn()->prepare($sql);
+        $stmt->bindValue(1, $u->getId());
+        $stmt->execute();
+
+        if($stmt->rowCount() > 4) {
+            return false;
+            exit;
+        } else {
+            $sql = 'INSERT INTO img (id, id_unique, img_name, img_title, img_desc) VALUES (?,?,?,?,?)';
+            $stmt = Conect::Conn()->prepare($sql);
+            $stmt->bindValue(1, $u->getId());
+            $stmt->bindValue(2, null);
+            $stmt->bindValue(3, $u->getNome());
+            $stmt->bindValue(4, $u->getTitulo());
+            $stmt->bindValue(5, $u->getDesc());
+            $stmt->execute();
+
+            return true;
+        }
+
+    }
+
     public function Read() {
 
         $sql = 'SELECT * FROM tb';
@@ -40,12 +67,20 @@ class Crud{
         return $a;
     }
 
-    public function ReadAllImages(User $p) {
+    public function ReadAllImages() {
+        $sql = 'SELECT * FROM img';
+        $stmt = Conect::Conn()->prepare($sql);
+        $stmt->execute();
+        $a = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $a;
+    }
+
+    public function ReadAllImagesUser(User $p) {
         $sql = 'SELECT * FROM img WHERE id = ?';
         $stmt = Conect::Conn()->prepare($sql);
         $stmt->bindValue(1, $p->getId());
         $stmt->execute();
-        $a = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $a;
     }
     
@@ -102,6 +137,7 @@ class Crud{
             
             $_SESSION['email'] = $a['e'];
             $_SESSION['senha'] = $a['s'];
+            $_SESSION['id'] = $a['id'];
             return true;
         } else {
             return false;

@@ -1,0 +1,20 @@
+#img_user_page{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+}
+.imagens {
+    margin: 5px;
+    border: 2px solid rgb(156, 23, 0);
+    transition: 0.5s ease all;
+}
+.imagens:hover {
+    transform: translateY(-10px);
+    box-shadow: 5px 5px 10px rgb(0,174,255);
+}
+
+#titulo_img_user {
+    text-align: center;
+}
+

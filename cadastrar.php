@@ -22,7 +22,7 @@ include 'head_out.php';
         <input type="password" placeholder="password" name="senha"><br>
         <input type="password" placeholder="confirm password" name="conf_senha"><br>
         <input type="submit" value="Submit" name="enviar" class="button_a_confirm">
-        <a href="index.php" class="button_a_back">Back</a>
+        <a href="login.php" class="button_a_back">Login</a>
 
     </form>
 
