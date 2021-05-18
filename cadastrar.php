@@ -17,11 +17,12 @@ include 'head_out.php';
 </head>
 <body>
     <form action="" method="post">
-        <input type="text" placeholder="name" name="name"><br>
-        <input type="email" placeholder="email" name="email"><br>
-        <input type="password" placeholder="password" name="senha"><br>
-        <input type="password" placeholder="confirm password" name="conf_senha"><br>
-        <input type="submit" value="Submit" name="enviar" class="button_a_confirm">
+        <h2>Novo Usuário</h2>
+        <input type="text" placeholder="nome" name="name" class="input"><br>
+        <input type="email" placeholder="email" name="email" class="input"><br>
+        <input type="password" placeholder="senha" name="senha" class="input"><br>
+        <input type="password" placeholder="confirmar senha" name="conf_senha" class="input"><br>
+        <input type="submit" value="Cadastrar" name="enviar" class="button_a_confirm">
         <a href="login.php" class="button_a_back">Login</a>
 
     </form>

@@ -18,10 +18,10 @@ include 'head_out.php';
 </head>
 <body>
     <form action="" method="POST">
-        <input type="text" name="email" placeholder="email">
-        <input type="password" name="senha" placeholder="password">
-        <input type="submit" name="enviar" value="Submit" class="button_a_confirm">
-        <a href="index.php" class="button_a_back">Back</a>
+        <h2>Login</h2>
+        <input type="text" name="email" placeholder="email" class="input">
+        <input type="password" name="senha" placeholder="password" class="input">
+        <input type="submit" name="enviar" value="Entrar" class="button_a_confirm input">
     </form>
     <div style="margin: 0 auto;">
         <a href="cadastrar.php" style="text-align: center; color: rgb(0,162,255)">Cadastre-se</a>

@@ -1,3 +1,13 @@
+<?php
+    if(!$_SESSION)session_start();
+    if(!isset($_SESSION['email']))
+    {
+        header('location: ../index.php');
+        exit();
+    }
+
+    $nome = ($_SESSION['nome']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +16,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/mobileMenu.css">
     <link rel="stylesheet" href="../css/img_user.css">
+    <link rel="stylesheet" href="../css/index_imagens.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -16,8 +27,8 @@
             <button id="btn_mobile" style="padding: 5px 10px; font-size: 2.5em; background: none; color: white; border: none; cursor: pointer;">=</button>
             <ul>
                 <li><a href="index.php"> Início</a></li>
-                <li><a href=""> Conta</a></li>
                 <li><a href="img_user.php"> Imagens</a></li>
+                <li><a href="usuario_page.php"> <?php echo $nome; ?></a></li>
                 <li><a href="sair.php"> Sair</a></li>
             </ul>
         </nav>

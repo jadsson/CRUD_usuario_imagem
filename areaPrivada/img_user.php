@@ -14,8 +14,8 @@ include_once 'head_in.php';
 
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data" method="POST">
     <input type="file" name="arquivo">
-    <input type="text" name="titulo" placeholder="titulo da imagem">
-    <input type="text" name="desc" placeholder="descriçao da imagem">
+    <input type="text" name="titulo" placeholder="titulo da imagem" class="input">
+    <input type="text" name="desc" placeholder="descriçao da imagem" class="input">
     <button type="submit" placeholder="enviar" name="enviar" class="button_a_confirm">Enviar Arquivo</button>
 </form>
 
@@ -43,7 +43,7 @@ include_once 'head_in.php';
 
                 $cadastrarImg = $u->CreateImage($i);
                 if(!$cadastrarImg) {
-                    echo "Você já enviou a quantidade máxima de imagens permitidas";
+                    $mensagem = "Você já enviou a quantidade máxima de imagens permitidas";
                 }
 
             } else {
@@ -54,18 +54,22 @@ include_once 'head_in.php';
             $mensagem = "Formato inválido";
         }
 
+        if($mensagem !== null) {
+            echo $mensagem;
+        }
     }
 
     // --- pegando todas as imagens deste usuário
     $user->setId($_SESSION['id']);
     $images = $u->ReadAllImagesUser($user);
-
     ?>
     <h1 id="titulo_img_user">Suas Imagens</h1>
     <div id="img_user_page">
     <?php
     for($i=0; $i<count($images); $i++) {
+        echo '<a href="img_edit.php?id_unique='.$images[$i]['id_unique'].'">';
         echo '<img src="../img/'.$images[$i]['img_name'].'" alt="" class="imagens">';
+        echo '</a>';
     }
     ?>
     </div>

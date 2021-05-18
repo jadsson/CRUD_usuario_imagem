@@ -14,7 +14,7 @@
             </ul>
             <ul class="content_ul">
                 <li><a href="mailto:j@gmail.com">Email</a></li>
-                <li><a href="tel:999669966"></a>Telefone</li>
+                <li><a href="tel:999669966">Telefone</a></li>
             </ul>
         </div>
     </section>

@@ -69,9 +69,8 @@ class Crud{
 
     public function ReadAllImages() {
         $sql = 'SELECT * FROM img';
-        $stmt = Conect::Conn()->prepare($sql);
-        $stmt->execute();
-        $a = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $stmt = Conect::Conn()->query($sql);
+        $a = $stmt->fetchAll(\PDO::FETCH_ASSOC);
         return $a;
     }
 
@@ -85,7 +84,7 @@ class Crud{
     }
     
     public function ReadOneImage($id_unique) {
-        $sql = 'SELECT * FROM img WHERE id = ?';
+        $sql = 'SELECT * FROM img WHERE id_unique = ?';
         $stmt = Conect::Conn()->prepare($sql);
         $stmt->bindValue(1, $id_unique);
         $stmt->execute();
@@ -135,6 +134,7 @@ class Crud{
             if(!isset($_SESSION)) session_start();
             $a = $stmt->fetch();
             
+            $_SESSION['nome'] = $a['n'];
             $_SESSION['email'] = $a['e'];
             $_SESSION['senha'] = $a['s'];
             $_SESSION['id'] = $a['id'];

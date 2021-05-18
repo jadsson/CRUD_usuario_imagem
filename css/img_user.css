@@ -2,19 +2,59 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     padding: 50px;
 }
 .imagens {
+    width: 450px;
     margin: 5px;
     border: 2px solid rgb(156, 23, 0);
     transition: 0.5s ease all;
+    cursor: pointer;
 }
 .imagens:hover {
     transform: translateY(-10px);
     box-shadow: 5px 5px 10px rgb(0,174,255);
 }
+@media (max-width: 900px){
+    #img_user_page {
+        padding: 0;
+    }
+    .imagens:hover {
+        transform: translateY(-10px);
+    }
+}
 
 #titulo_img_user {
     text-align: center;
+    color: #444;
 }
 
+/* Página img_edit.php, editar dados da imagem */
+#img_edit{
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#img_edit img{
+    max-width: 100%;
+    pointer-events: none;
+}
+#img_edit form{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+#img_edit form input{
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+#img_edit form textarea{
+    max-width: 500px;
+    max-height: 150px;
+    min-width: 500px;
+    min-height: 150px;
+    padding: 5px 0 0 10px;
+    outline: none;
+}
