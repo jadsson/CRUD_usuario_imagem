@@ -20,19 +20,18 @@ include 'head_out.php';
     <form action="" method="POST">
         <h2>Login</h2>
         <input type="text" name="email" placeholder="email" class="input">
-        <input type="password" name="senha" placeholder="password" class="input">
+        <input type="password" name="senha" placeholder="senha" class="input">
         <input type="submit" name="enviar" value="Entrar" class="button_a_confirm input">
     </form>
     <div style="margin: 0 auto;">
-        <a href="cadastrar.php" style="text-align: center; color: rgb(0,162,255)">Cadastre-se</a>
+        <a href="cadastrar.php" style="text-align: center; color: rgb(0,162,255); font-weight: bold;">Cadastre-se</a>
     </div>
 </body>
-
     <?php
         if(isset($_POST['enviar']))
         {
-            $email = addslashes($_POST['email']);
-            $senha = addslashes($_POST['senha']);
+            $email = htmlentities(addslashes($_POST['email']));
+            $senha = htmlentities(addslashes($_POST['senha']));
 
             if($crud->Login($email, $senha) === false) {
                 ?><div class="msg_erro">

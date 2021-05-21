@@ -15,7 +15,7 @@
             <button id="btn_mobile" style="padding: 5px 10px; font-size: 2.5em; background: none; color: white; border: none; cursor: pointer;">=</button>
             <ul>
                 <li><a href="index.php"> Início</a></li>
-                <li><a href=""> Sobre</a></li>
+                <li><a href="sobre.php"> Sobre</a></li>
                 <li><a href="login.php"> Login</a></li>
             </ul>
         </nav>

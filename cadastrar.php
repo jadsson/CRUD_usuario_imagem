@@ -18,7 +18,7 @@ include 'head_out.php';
 <body>
     <form action="" method="post">
         <h2>Novo Usuário</h2>
-        <input type="text" placeholder="nome" name="name" class="input"><br>
+        <input type="text" placeholder="nome de usuário" name="name" class="input" maxlength="12"><br>
         <input type="email" placeholder="email" name="email" class="input"><br>
         <input type="password" placeholder="senha" name="senha" class="input"><br>
         <input type="password" placeholder="confirmar senha" name="conf_senha" class="input"><br>
@@ -32,10 +32,10 @@ include 'head_out.php';
         
         if(isset($_POST['enviar']))
         {
-            $n = addslashes($_POST['name']);
-            $e = addslashes($_POST['email']);
-            $s = addslashes($_POST['senha']);
-            $c_s = addslashes($_POST['conf_senha']);
+            $n      = htmlentities(addslashes($_POST['name']));
+            $e      = htmlentities(addslashes($_POST['email']));
+            $s      = htmlentities(addslashes($_POST['senha']));
+            $c_s    = htmlentities(addslashes($_POST['conf_senha']));
 
             if(!empty($n) && !empty($e) && !empty($s) && !empty($c_s)) {
                 if($s === $c_s) {
@@ -54,7 +54,7 @@ include 'head_out.php';
                    ?><div class="msg_erro">SENHAS DIVERGENTES</div><?php
                 }
             } else {
-                ?><div class="msg_erro">ATENÇÃO!!! PREENCHA OS CAMPOS OBRIGATÓRIOS</div><?php
+                ?><div class="msg_erro">ATENÇÃO!!! Todos os campos são obrigatórios</div><?php
             }
         }
     
