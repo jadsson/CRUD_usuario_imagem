@@ -2,6 +2,8 @@
     require_once 'vendor/autoload.php';
 
     include 'head_out.php';
+    $u = new \App\Model\Crud;
+    $img = $u->ReadAllImages();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,45 +21,25 @@
     </div>
 
         <div id="conteudo_index">
-            <h2>AS MAIS VOTADAS DO SITE</h2>
+            <h2>ÚLTIMOS ENVIOS</h2>
             <div class="secao_imagens_index_externo">
+            <?php 
+                for($i=0; $i<count($img); $i++) {
+                    ?>
+                    <div class="imagens_index_externo">
+                        <?php echo "<img src=img/".$img[$i]['img_name'].">"; ?>
+                        <div class="texto_imagens_index_externo">
+                            <h3><?php echo $img[$i]['img_title']; ?></h3>
+                            <p><?php echo $img[$i]['img_desc']; ?></p>
+                        </div>
+                    </div>
+                    <?php
+                    if($i == 4) break;
+                }
             
-            <div class="imagens_index_externo">
-                <img src="img/Shani.jpg" alt="">
-                <div class="texto_imagens_index_externo">
-                    <h3>Cosplay Shani</h3>
-                    <p>Cosplay incrivelmente fiel da Shani</p>
-                </div>
-            </div>
-            <div class="imagens_index_externo">
-                <img src="img/60a6d82761bda.jpg" alt="">
-                <div class="texto_imagens_index_externo">
-                    <h3>Cosplay Triss Merigold</h3>
-                    <p>Cosplay adulto da Triss Merigold</p>
-                </div>
-            </div>
-            <div class="imagens_index_externo">
-                <img src="img/60a6e64a03504.png" alt="">
-                <div class="texto_imagens_index_externo">
-                    <h3>Geralt e Yennefer</h3>
-                    <p>Geralt e Yennefer em fanArt</p>
-                </div>
-            </div>
-            <div class="imagens_index_externo">
-                <img src="img/60a6d789294e4.jpg" alt="">
-                <div class="texto_imagens_index_externo">
-                    <h3>Cosplay Cirilla</h3>
-                    <p>Cosplay espetacular da Ciri</p>
-                </div>
-            </div>
-            <div class="imagens_index_externo">
-                <img src="img/60a6d6c369ae8.jpg" alt="">
-                <div class="texto_imagens_index_externo">
-                    <h3>Cosplay Keira Metz</h3>
-                    <p>Keira tão sensual quanto você jamais viu</p>
-                </div>
-            </div>
+            ?>
         </div>
+        <br>
     </div>
 
 

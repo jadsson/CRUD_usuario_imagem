@@ -11,7 +11,7 @@ $i = new \App\Model\Image;
 
 include_once 'head_in.php';
 ?>
-
+<h1 style="text-align: center;">Envie Suas Imagens</h1>
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data" method="POST">
     <input type="file" name="arquivo">
     <input type="text" name="titulo" placeholder="titulo da imagem" class="input" maxlength="40">
@@ -77,8 +77,7 @@ include_once 'head_in.php';
     $user->setId($_SESSION['id']);
     $images = $u->ReadAllImagesUser($user);
     ?>
-    <h1 id="titulo_img_user">Suas Imagens</h1>
-    <p>Selecione para editar as informações da imagem ou excluí-la</p>
+    <p>Selecione uma imagem para editar suas informações ou excluí-la</p>
     <div id="img_user_page">
     <?php
     for($i=0; $i<count($images); $i++) {

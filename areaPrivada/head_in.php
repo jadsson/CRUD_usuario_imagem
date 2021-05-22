@@ -5,8 +5,12 @@
         header('location: ../index.php');
         exit();
     }
+    require_once '../vendor/autoload.php';
 
-    $nome = ($_SESSION['nome']);
+    // --- pegando nome de usuário direto do bando de dados, evita erro de user diferente depois de editado
+    $u = new \App\Model\Crud;
+
+    $nome = $u->ReadOneUser($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +32,7 @@
             <ul>
                 <li><a href="index.php"> Início</a></li>
                 <li><a href="img_user.php"> Imagens</a></li>
-                <li><a href="usuario_page.php"> <?php echo $nome; ?></a></li>
+                <li><a href="usuario_page.php"> <?php echo $nome['n']; ?></a></li>
                 <li><a href="sair.php"> Sair</a></li>
             </ul>
         </nav>

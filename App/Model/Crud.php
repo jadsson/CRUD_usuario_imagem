@@ -52,7 +52,7 @@ class Crud{
         }
 
     }
-
+    // ------ MOSTRAR TODOS USUÁRIOS ----------
     public function Read() {
 
         $sql = 'SELECT * FROM tb';
@@ -66,22 +66,39 @@ class Crud{
         }
         return $a;
     }
-
+    // ------ MOSTRAR DADOS DE UM USUÁRIO ----------
+    public function ReadOneUser($id) {
+        $sql = "SELECT * FROM tb WHERE id = ?";
+        $stmt = Conect::Conn()->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+        $a = $stmt->fetch(\PDO::FETCH_ASSOC);
+        return $a;
+    }
     public function Update(User $u) {
         $sql = 'UPDATE tb SET n=?, e=?, s=? WHERE id = ?';
         $stmt = Conect::Conn()->prepare($sql);
         $stmt->bindValue(1, $u->getNome());
         $stmt->bindValue(2, $u->getEmail());
-        $stmt->bindValue(3, $u->getSenha());
+        $stmt->bindValue(3, sha1($u->getSenha()));
         $stmt->bindValue(4, $u->getId());
         $stmt->execute();
     }
 
     public function Delete($id) {
-        $sql = 'DELETE FROM tb WHERE id = ?';
+        $sql = "SELECT * FROM img WHERE id = ?";
         $stmt = Conect::Conn()->prepare($sql);
         $stmt->bindValue(1, $id);
         $stmt->execute();
+        if($stmt->rowCount() > 0) {
+            return false;   // ---- não pode excluir a conta se ainda há imagens nela
+        } else {
+            $sql = 'DELETE FROM tb WHERE id = ?';
+            $stmt = Conect::Conn()->prepare($sql);
+            $stmt->bindValue(1, $id);
+            $stmt->execute();
+            return true;
+        }
     }
 
     public function Login($e, $s) {

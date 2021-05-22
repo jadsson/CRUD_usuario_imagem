@@ -44,9 +44,7 @@ $img = new \App\Model\Image;
         <?php
 
     } else {
-        unset($_SESSION['id'], $_SESSION['nome'], $_SESSION['email'], $_SESSION['senha']);
-        header("location: ../index.php");
-        exit;
+        header("location: img_user.php");
     }
 
 
@@ -58,7 +56,7 @@ $img = new \App\Model\Image;
         if(!empty($title))
         {
             $u->UpdateImage($title, $desc, $info_img['id_unique']);
-            header("location: img_user.php");
+            header("location: img_edit.php?id_unique=".$info_img['id_unique']);
         } else {
             echo "<div class='msg_erro'>Sua imagem precisa ter um título</div>";
         }
@@ -68,14 +66,10 @@ $img = new \App\Model\Image;
 
     if(isset($_POST['excluir']))
     {
-        $u->DeleteImage($info_img['id_unique']);
-        $caminho_img = "../img/".$info_img['img_name'];
-        unlink($caminho_img);
-        header("location: img_user.php");
+        header("location: excluir_imagem.php?id_unique=".$info_img['id_unique']);
     }
     
 ?>
-
 
 <?php
     include 'footer_in.php';

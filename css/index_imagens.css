@@ -18,12 +18,15 @@ img:hover{
 }
 
 /* img_full_page */
-#img_full_page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#img_full_page{
+    width: 90%;
+    margin: 20px auto;
     flex-direction: column;
     pointer-events: none;
+}
+#img_full_page_img{
+    width: 80%;
+    margin: auto;
 }
 #img_full_conteudo{
     color: #444;

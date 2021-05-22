@@ -263,5 +263,6 @@ h2, #logo{
     color: rgb(230, 230, 230);
     line-height: 20px;
     padding: 50px;
-    background: linear-gradient(to right, rgb(0, 97, 161), rgb(13, 14, 104));
+    background: linear-gradient(to top, var(--color-blue), var(--color-red));
+    border-radius: 20px;
 }

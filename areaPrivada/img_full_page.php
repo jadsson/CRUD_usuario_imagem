@@ -14,10 +14,12 @@ $imagem = $i->ReadOneImage($id);    // sempre passar o valor para uma variável
 
 ?>
 <div id="img_full_page">
-    <?php
-        echo '<img src="../img/'.$imagem["img_name"].'" alt="">';
-        
-    ?>
+    <div id="img_full_page_img">
+        <?php
+            echo '<img src="../img/'.$imagem["img_name"].'" alt="">';
+            
+        ?>
+    </div>
 </div>
 <div id="img_full_conteudo">
     <?php
