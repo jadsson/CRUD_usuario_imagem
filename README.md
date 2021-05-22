@@ -4,6 +4,23 @@
 
 ### Interface
 
+## Prints
+### Tela inicial deslogada
+<img src="img/prints_site/tela_inicio_out.png">
+
+### Tela inicial logada
+<img src="img/prints_site/tela_inicio_in.png">
+
+### Tela com as imagens do usuário
+<img src="img/prints_site/tela_img_user.png">
+
+### Tela pra edição ou exclusão da imagem
+<img src="img/prints_site/tela_edicao.png">
+
+### Tela pra edição ou exclusão do usuario
+<img src="img/prints_site/tela_edit_usuario.png">
+
+
 1. Interface de PC e Smartphone prontas
    - Tela inicial exibe as últimas 5 imagens postadas 
    - Tela inicial privada exibe todas as imagens de todos os usuários
@@ -37,20 +54,3 @@
 - Escape de códigos nos inputs
 - Não há como acessar a área privada sem estar logado
 - Não há como um usuário acessar a área de edição de outro usuário através da url
-
-
-## Prints
-### Tela inicial deslogada
-<img src="img/prints_site/tela_inicio_out.png">
-
-### Tela inicial logada
-<img src="img/prints_site/tela_inicio_in.png">
-
-### Tela com as imagens do usuário
-<img src="img/prints_site/tela_img_user.png">
-
-### Tela pra edição ou exclusão da imagem
-<img src="img/prints_site/tela_edicao.png">
-
-### Tela pra edição ou exclusão do usuario
-<img src="img/prints_site/tela_edit_usuario.png">
